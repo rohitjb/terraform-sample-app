@@ -1,5 +1,5 @@
 provider "google" {
-  project = "firstkubernetes-176201"
+  project = "terraform-gcp-demo-294123"
   region  = "europe-west2"
   zone    = "europe-west2-b"
 }
