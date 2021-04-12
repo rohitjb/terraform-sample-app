@@ -15,10 +15,6 @@ steps:
     image: codefresh/cli
     commands:
       - 'codefresh run terraform-deployment -b=${{CF_BRANCH}}' -t git_trigger
-    when:
-      condition:
-        all:
-          validatePRAction: '''${{CF_PULL_REQUEST_ACTION}}'' == ''opened'''
   clone:
     title: "Cloning repository"
     type: "git-clone"
