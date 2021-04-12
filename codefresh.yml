@@ -33,3 +33,5 @@ steps:
     commands:
       - terraform init
       - terraform apply -auto-approve 
+      
+      
