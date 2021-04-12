@@ -14,7 +14,7 @@ steps:
     title: trigger
     image: codefresh/cli
     commands:
-      - 'codefresh run terraform-deployment -b=${{CF_BRANCH}}' -t git_trigger
+      - 'codefresh run terraform-deployment -b=${{CF_BRANCH}}' -t git_action
   clone:
     title: "Cloning repository"
     type: "git-clone"
