@@ -4,11 +4,21 @@
 version: "1.0"
 # Stages can help you organize your steps in stages
 stages:
+  - "triggerstep"
   - "clone"
   - "prepare"
   - "deploy"
 
 steps:
+  triggerstep:
+    title: trigger
+    image: codefresh/cli
+    commands:
+      - 'codefresh run <pipeline_B> -b=${{CF_BRANCH}}' -t git_trigger
+    when:
+      condition:
+        all:
+          validatePRAction: '''${{CF_PULL_REQUEST_ACTION}}'' == ''opened'''
   clone:
     title: "Cloning repository"
     type: "git-clone"
